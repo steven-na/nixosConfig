@@ -1,0 +1,235 @@
+/* Hidden buttons */
+/* #nav-bar-overflow-button, */
+#zen-current-workspace-indicator{
+	display: none
+}
+
+/* Bottom workspace pill */
+#zen-workspaces-button{
+	width: 100% !important;
+}
+#zen-sidebar-icons-wrapper{
+	background-color: #0000000f !important;
+	border-radius: 1em;
+	padding: 0.25em !important;
+}
+
+
+/* reduce the separaters width */
+#vertical-pinned-tabs-container-separator, #tabbrowser-arrowscrollbox-periphery:before, #TabsToolbar-customization-target:after{
+	width: 30% !important;
+}
+
+/* Modify new tab entry */
+[label="Super Speedy Dial"]{
+	.tab-label-container:after{
+		content: "Home" !important;
+	}
+	
+	label{
+		display: none !important;
+	}
+	
+	.tab-icon-image{
+		content: url("chrome://branding/content/icon32.png") !important;
+		border-radius: 100px !important;
+		mix-blend-mode: difference !important;
+	}
+}
+
+
+/* fix workspaces icons */
+toolbarbutton{
+	padding: 0.1em !important;
+}
+
+#zen-sidebar-top-buttons{
+	
+	.titlebar-buttonbox-container{
+		display: none !important;
+	}
+}
+
+/* extension (zen) button scale for macos */
+#unified-extensions-button{
+	margin-left: 0.25em !important;
+	image{
+	border-radius: 100px !important;
+		scale: 1.2;
+	}
+}
+
+/* url bar cleanup */
+#identity-permission-box{
+	display: none !important;
+}
+
+/* compact mode mini sidebar */
+[zen-compact-mode="true"]{
+	#titlebar{
+	height: 85% !important;
+/* 		margin: auto !important; */
+		border-radius: 1.5em !important;
+		top: 50% !important;
+		transform: translateY(-50%) !important;
+	}
+}
+
+.tabbrowser-tab, #tabbrowser-arrowscrollbox{
+	transition: all 0.5s ease-in-out !important;
+}
+
+/* hidden sidebar bottom buttoms */
+#zen-sidebar-icons-wrapper {
+	opacity: 0.2;
+	transition: 
+		all .35s cubic-bezier( 0.7, 0.16, 0.48, 0.99 );
+	
+	&:hover {
+		opacity: 1 !important;
+	}
+}	
+
+/* Hide 'Search with Google or enter address' placeholder */
+#urlbar-input::placeholder {
+  opacity: 0 !important;
+}
+
+.unified-extensions-item-action-button{
+	.unified-extensions-item-message-deck{
+		display: none !important;
+	}
+}
+
+/* no shadow and gaps */
+hbox.browserSidebarContainer, #zen-tabbox-wrapper {
+	box-shadow: none !important;
+	margin: 0 !important;
+}
+
+/* No window controls */
+/*#zen-appcontent-navbar-container{
+	display: none !important;
+}*/
+
+#zen-appcontent-wrapper{
+	left: 0 !important;
+	top: 0 !important;
+	max-width: 100% !important;
+	margin: 0 !important;
+	padding: 0 !important;
+}
+
+/* Tab switch animation */
+#tabbrowser-arrowscrollbox, tab{
+	transition: all 0.3s ease-in-out !important;
+}
+
+tab:not([zen-essential='true']) .tab-background{
+	transition: all 0.2s ease-in-out !important;
+	scale: 0 !important;
+}
+
+tab:not([zen-essential='true']) .tab-background[selected]{
+	scale: 1 !important;
+}
+
+#tabbrowser-tabpanels hbox{
+/* 	transition: all 0.2s ease-out !important; */
+	
+	transition: scale .2s ease-out, opacity 0.3s cubic-bezier( 0.7, 0.16, 0.48, 0.99 ) !important;
+	scale: 0.9 !important;
+	opacity: 0;
+}
+#tabbrowser-tabpanels hbox.deck-selected{
+	scale: 1 !important;
+	opacity: 1 !important;
+	left: 0 !important;
+}
+
+#browser .browserContainer{
+	transition: all 0.2s cubic-bezier(0.86, 0, 0.07, 1) !important;
+}
+
+/* bouncy compact sidebar reveal - better kept off */
+[zen-compact-mode="true"] #navigator-toolbox{
+	transition: all 0.3s cubic-bezier(0.86, 0, 0.07, 1) !important;
+}
+
+/* URL bar page animation */
+#browser:has(#urlbar[open][zen-floating-urlbar="true"]) .browserContainer {
+  pointer-events: none;
+	scale: 1.1 !important;
+  filter: blur(5px) brightness(70%) !important;
+}
+
+#urlbar[open][zen-floating-urlbar="true"] #urlbar-background{
+	transition: all 0.3s cubic-bezier(0.86, 0, 0.07, 1) !important;
+	border-radius: 2em !important;
+	opacity: .75;
+	filter: blur(2px) brightness(70%) !important;
+}
+
+/* Fix find in page */
+findbar *{
+	opacity: 1 !important;
+}
+
+/* Loading tab animation */
+tab[busy]{
+	scale: 0.95 !important;
+	.tab-background{
+		opacity: 0.3 !important;
+	}
+} 
+
+/* MINE OWN STUF (TUFF) */
+
+/* Non-selected pinned tab */
+.tabbrowser-tab[pinned]:not([zen-essentials])  .tab-stack .tab-background {
+    background-color: rgba(0, 0, 0, 0) !important; /* Transparent background */
+    backdrop-filter: blur(1px) !important; /* Apply blur effect */
+	  transition: all 0.2s ease-in-out;
+	  scale: 0.9 !important;
+}
+
+/* Hover effect: add border and scale up */
+.tabbrowser-tab[pinned]:not([selected]):not([zen-essentials]):hover .tab-stack .tab-background {
+    border: 2px solid #ffffff59 !important;
+    scale: 0.95 !important; /* Slightly enlarge */
+}
+
+/* Selected pinned tab */
+.tabbrowser-tab[pinned]:not([zen-essentials])  .tab-stack .tab-background[selected] {
+    background-color: rgba(150, 150, 150, 0.05) !important; /* Transparent background */
+    backdrop-filter: blur(2px) !important; /* Apply blur effect */
+	border: 2px solid #ffffff59 !important;
+	  scale: 1 !important;;
+}
+
+/* Non-selected pinned icon */
+.tabbrowser-tab[pinned]:not([zen-essentials])  .tab-stack .tab-content .tab-icon-image {
+	  transition: all 0.2s ease-in-out;
+	  scale: 1 !important;
+}
+
+/* Hover effect: add border and scale up */
+.tabbrowser-tab[pinned]:not([selected]):not([zen-essentials]):hover .tab-stack .tab-content .tab-icon-stack {
+    scale: 1 !important; /* Slightly enlarge */
+}
+
+/* Selected pinned icon */
+.tabbrowser-tab[pinned]:not([zen-essentials])  .tab-stack .tab-content .tab-icon-stack[selected] .tab-icon-image {
+	  scale: 1.3 !important;;
+}
+
+.tab-reset-button {
+    display: none !important;
+}
+
+/* .zen-essentials-container .tabbrowser-tab  .tab-stack .tab-content .tab-icon-stack .tab-close-button {
+  display: none !important;
+} */
+.tab-content:hover .tab-icon-stack {
+    display: grid;
+  }
