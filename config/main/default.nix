@@ -148,8 +148,6 @@
  
     vesktop
     discord
-    spotify
-    # spicetify-cli
 
     neovim
   ];
