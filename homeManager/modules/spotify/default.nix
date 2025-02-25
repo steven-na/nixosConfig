@@ -32,5 +32,7 @@
 
     theme = spicePkgs.themes.comfy;
     colorScheme = "nord";
+  
   };
+  services.mpd-mpris.enable = true;
 }

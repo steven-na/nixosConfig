@@ -10,10 +10,6 @@
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    hyprpanel = {
-      url = "github:jas-singhfsu/hyprpanel";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
     nix-colors = {
       url = "github:misterio77/nix-colors";
     };
@@ -28,7 +24,6 @@
     nixpkgs,
     home-manager,
     zen-browser,
-    hyprpanel,
     ...
   }: let
     system = "x86_64-linux"; # change to whatever your system should be
@@ -50,9 +45,7 @@
       "blakec@main" = home-manager.lib.homeManagerConfiguration {
         pkgs = import nixpkgs {
           inherit system;
-          overlays = [
-            inputs.hyprpanel.overlay
-          ];
+          overlays = [];
         };
         extraSpecialArgs = {
           inherit system;

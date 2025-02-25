@@ -14,10 +14,10 @@ in {
   ];
 
   environment.systemPackages = with pkgs; [
-    # waybar
-    # (waybar.overrideAttrs (oldAttrs: {
-    #   mesonFlags = oldAttrs.mesonFlags ++ [ "-Dexperimental=true" ];
-    # }))
+    waybar
+    (waybar.overrideAttrs (oldAttrs: {
+      mesonFlags = oldAttrs.mesonFlags ++ [ "-Dexperimental=true" ];
+    }))
     hyprcursor
     swaynotificationcenter
     libnotify

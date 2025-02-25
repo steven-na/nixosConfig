@@ -124,6 +124,23 @@
     jack.enable = true;
   };
 
+  services.mpd = {
+    enable = true;
+    musicDirectory = "/path/to/music";
+    extraConfig = ''
+      audio_output {
+        type "pipewire"
+        name "My PipeWire Output"
+      }
+    '';
+    network.listenAddress = "any"; # if you want to allow non-localhost connections
+  };
+
+  services.mpd.user = "blakec";
+  systemd.services.mpd.environment = {
+      XDG_RUNTIME_DIR = "/run/user/${toString config.users.users.blakec.uid}"; # User-id must match above user. MPD will look inside this directory for the PipeWire socket.
+  };
+
   # Enable touchpad support (enabled default in most desktopManager).
   # services.xserver.libinput.enable = true;
 

@@ -19,6 +19,8 @@ in
           exec-once = [
             "hyprctl setcursor ${pointer.name} ${toString pointer.size}"
             "hyprpaper"
+            "waybar"
+            "notify-send Welcome!"
           ];
         env = [
           "GTK_THEME,Nordic"
