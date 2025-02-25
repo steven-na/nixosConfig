@@ -16,5 +16,9 @@
     unzip
     ripgrep
     cargo
+    gowall
+
+    starship
+    grc
   ];
 }

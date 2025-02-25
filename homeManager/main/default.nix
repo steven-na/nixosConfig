@@ -14,6 +14,7 @@
     ../modules/nvim
     ../modules/zen
     ../modules/spotify
+    ../modules/cli
   ];
 
   colorScheme = inputs.nix-colors.colorSchemes.nord;

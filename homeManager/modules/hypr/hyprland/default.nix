@@ -16,17 +16,17 @@ in
     wayland.windowManager.hyprland = {
         enable = true;
         settings = {
-            exec-once = [
-        "hyprctl setcursor ${pointer.name} ${toString pointer.size}"
-        "hyprpaper"
-      ];
-      env = [
-        "GTK_THEME,Nordic"
-        "env = WLR_NO_HARDWARE_CURSORS,1"
-      ];
-    };
-    extraConfig = # hyprlang
-      ''
+          exec-once = [
+            "hyprctl setcursor ${pointer.name} ${toString pointer.size}"
+            "hyprpaper"
+          ];
+        env = [
+          "GTK_THEME,Nordic"
+          "env = WLR_NO_HARDWARE_CURSORS,1"
+        ];
+      };
+      extraConfig = # hyprlang
+        ''
         # Monitor settings
         monitor=eDP-2, 1920x1200@165, 0x0, 1.5
 

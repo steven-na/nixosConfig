@@ -10,6 +10,10 @@
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    hyprpanel = {
+      url = "github:jas-singhfsu/hyprpanel";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
     nix-colors = {
       url = "github:misterio77/nix-colors";
     };
@@ -20,13 +24,15 @@
     zen-browser.url = "github:0xc000022070/zen-browser-flake";
   };
 
-  outputs = {
+  outputs = inputs @ {
     nixpkgs,
     home-manager,
     zen-browser,
+    hyprpanel,
     ...
-  }@inputs:
-  {
+  }: let
+    system = "x86_64-linux"; # change to whatever your system should be
+  in {
     formatter.x86_64-linux = nixpkgs.legacyPackages.x86_64-linux.nixpkgs-fmt;
 
     nixosConfigurations = {
@@ -42,8 +48,14 @@
 
     homeConfigurations = {
       "blakec@main" = home-manager.lib.homeManagerConfiguration {
-        pkgs = nixpkgs.legacyPackages."x86_64-linux";
+        pkgs = import nixpkgs {
+          inherit system;
+          overlays = [
+            inputs.hyprpanel.overlay
+          ];
+        };
         extraSpecialArgs = {
+          inherit system;
           inherit inputs;
         };
         modules = [
