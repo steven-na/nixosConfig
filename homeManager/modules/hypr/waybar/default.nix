@@ -25,7 +25,7 @@
           ];
           modules-center = [ 
             # "hyprland/workspaces"
-            "custom/weather" "custom/separator"
+            # "custom/weather" "custom/separator"
             "clock#time" "clock#date" 
           ];
           modules-right = [
@@ -52,13 +52,13 @@
             ignored-sinks = ["Easy Effects Sink"];
           };
 
-          "custom/weather" = {
-            exec = "${config.home.homeDirectory}/.config/waybar/scripts/get_weather.sh Shelton+Washington";
-            return-type = "json";
-            format = "{}";
-            tooltip = true;
-            interval = 3600;
-          };
+          # "custom/weather" = {
+          #   exec = "${config.home.homeDirectory}/.config/waybar/scripts/get_weather.sh LOCATION";
+          #   return-type = "json";
+          #   format = "{}";
+          #   tooltip = true;
+          #   interval = 3600;
+          # };
 
           "disk" = {
             format = "{percentage_used}% 󰋊";
