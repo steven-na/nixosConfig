@@ -8,6 +8,7 @@
     wget
     htop
     fd
+    jq
     imagemagick_light
     lazygit
     fastfetch
@@ -17,6 +18,7 @@
     ripgrep
     cargo
     gowall
+    inotify-tools
 
     starship
     grc

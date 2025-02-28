@@ -1,8 +1,27 @@
 { pkgs, config, ... }:
 let
-  wallpaper1 = "/home/blakec/Downloads/32.png";
+  wallpaper1 = "${config.home.homeDirectory}/.config/wallpaper/converted/wallpaper.png";
 in
 {
+  imports = [
+    ./wallpaper-changer.nix
+  ];
+
+  # systemd.user.services."wallpaper_changer" = {
+  #   Unit = {
+  #     Description = "Restart hyprpaper when changing wallpaper file";
+  #     PartOf = [ "graphical-session.target" ];
+  #     After = [ "graphical-session.target" ];
+  #   };
+  #   Service = {
+  #     ExecStart = "${config.home.homeDirectory}/.config/wallpaper/monitor_wallpaper.nix";
+  #     Restart = "on-failure";
+  #   };
+  #   Install = {
+  #     WantedBy = [ "graphical-session.target" ];
+  #   };
+  # };
+  #
   services.hyprpaper = {
     enable = true;
     settings = {
@@ -13,7 +32,7 @@ in
       preload = [ wallpaper1 ];
 
       wallpaper = [
-        "eDP-2,${wallpaper1}"
+        "eDP-1,${wallpaper1}"
       ];
     };
   };

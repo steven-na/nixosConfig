@@ -12,12 +12,15 @@ in {
       hyprland = unstablePkgs.hyprland;
     })
   ];
-
+  imports = [
+    # ./hyprpaper
+  ];
   environment.systemPackages = with pkgs; [
     waybar
     (waybar.overrideAttrs (oldAttrs: {
       mesonFlags = oldAttrs.mesonFlags ++ [ "-Dexperimental=true" ];
     }))
+    waybar-mpris
     hyprcursor
     swaynotificationcenter
     libnotify
