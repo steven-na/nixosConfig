@@ -1,9 +1,9 @@
 {
   inputs,
   pkgs,
+  config,
   ...
 }:
-
 {
   imports = [
     inputs.nix-colors.homeManagerModules.default
@@ -15,6 +15,7 @@
     ../modules/zen
     ../modules/spotify
     ../modules/cli
+    ../modules/git
   ];
 
   colorScheme = inputs.nix-colors.colorSchemes.nord;
