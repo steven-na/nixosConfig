@@ -19,7 +19,6 @@
     cargo
     gowall
     inotify-tools
-
     starship
     grc
   ];
