@@ -1,8 +1,8 @@
 { ... }:
 {
-  programs.git = {
-    enable = true;
-    userName = "Blake C";
-    userEmail = "bstevencamp@gmail.com";
-  };
+    programs.git = {
+        enable = true;
+        userName = "Blake C";
+        userEmail = "bstevencamp@gmail.com";
+    };
 }

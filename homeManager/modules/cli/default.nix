@@ -1,13 +1,13 @@
 {
-  inputs,
-  pkgs,
-  ...
+    inputs,
+    pkgs,
+    ...
 }:
 
 {
-  imports = [
-    ./fastfetch
-    ./starship
-    ./fish
-  ];
+    imports = [
+        ./fastfetch
+        ./starship
+        ./fish
+    ];
 }

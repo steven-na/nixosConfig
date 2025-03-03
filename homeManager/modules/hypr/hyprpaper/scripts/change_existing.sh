@@ -6,7 +6,7 @@ DEST_DIR="$HOME/.config/wallpaper/converted"
 GOWALL_DIR="$HOME/Pictures/gowall"
 
 # Find the most recent .png or .jpg image in ~/Downloads
-LATEST_IMAGE=$(ls -t "$SRC_DIR"/*.{png,jpg} 2>/dev/null | head -n 1)
+LATEST_IMAGE=$(ls -t "$SRC_DIR"/*.{png,jpg,jpeg} 2>/dev/null | head -n 1)
 
 # Ensure an image exists before proceeding
 if [[ -z "$LATEST_IMAGE" ]]; then
@@ -18,7 +18,7 @@ fi
 gowall convert -t nord "$LATEST_IMAGE"
 
 # Find the most recent image in the gowall folder (this should be the converted image)
-CONVERTED_IMAGE=$(ls -t "$GOWALL_DIR"/*.{png,jpg} 2>/dev/null | head -n 1)
+CONVERTED_IMAGE=$(ls -t "$GOWALL_DIR"/*.{png,jpg,jpeg} 2>/dev/null | head -n 1)
 
 # Ensure the converted image exists
 if [[ -z "$CONVERTED_IMAGE" ]]; then
