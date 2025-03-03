@@ -32,7 +32,7 @@ in
             preload = [ wallpaper1 ];
 
             wallpaper = [
-                "${wallpaper1}"
+                "eDP-1,${wallpaper1}"
             ];
         };
     };

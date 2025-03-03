@@ -30,7 +30,7 @@ in
         extraConfig = # hyprlang
             ''
                 # Monitor settings
-                monitor=eDP-2, 1920x1200@165, 0x0, 1.5
+                monitor=eDP-1, 1920x1200@165, 0x0, 1.5
                 misc {
                   disable_splash_rendering = true
                   disable_hyprland_logo = true

@@ -18,9 +18,7 @@
                 mainBar = {
                     layer = "top";
                     position = "top";
-                    output = [
-                        "eDP-2"
-                    ];
+                    output = "!0000000";
                     modules-left = [
                         "disk"
                         "custom/separator"
