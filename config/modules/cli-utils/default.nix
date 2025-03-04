@@ -1,4 +1,4 @@
-{ pkgs, config, ... }:
+{ pkgs, ... }:
 {
     environment.systemPackages = with pkgs; [
         pciutils
@@ -21,6 +21,7 @@
         inotify-tools
         starship
         grc
+        just
         nix-prefetch-git
     ];
 }
