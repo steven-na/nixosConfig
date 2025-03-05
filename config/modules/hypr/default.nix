@@ -1,18 +1,18 @@
 { pkgs, ... }:
-let
-    unstableTarball = fetchTarball {
-        url = "https://github.com/NixOS/nixpkgs/archive/nixos-unstable.tar.gz";
-        sha256 = "1blzcjd13srns4f5b4sl5ad2qqr8wh0p7pxbyl1c15lrsa075v8h";
-    };
-
-    unstablePkgs = import unstableTarball { system = pkgs.system; };
-in
+# let
+#     unstableTarball = fetchTarball {
+#         url = "https://github.com/NixOS/nixpkgs/archive/nixos-unstable.tar.gz";
+#         sha256 = "1blzcjd13srns4f5b4sl5ad2qqr8wh0p7pxbyl1c15lrsa075v8h";
+#     };
+#
+#     unstablePkgs = import unstableTarball { system = pkgs.system; };
+# in
 {
-    nixpkgs.overlays = [
-        (final: prev: {
-            hyprland = unstablePkgs.hyprland;
-        })
-    ];
+    # nixpkgs.overlays = [
+    #     (final: prev: {
+    #         hyprland = unstablePkgs.hyprland;
+    #     })
+    # ];
     imports = [
         # ./hyprpaper
     ];
