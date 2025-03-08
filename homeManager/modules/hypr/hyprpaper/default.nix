@@ -7,21 +7,6 @@ in
         ./wallpaper-changer.nix
     ];
 
-    # systemd.user.services."wallpaper_changer" = {
-    #   Unit = {
-    #     Description = "Restart hyprpaper when changing wallpaper file";
-    #     PartOf = [ "graphical-session.target" ];
-    #     After = [ "graphical-session.target" ];
-    #   };
-    #   Service = {
-    #     ExecStart = "${config.home.homeDirectory}/.config/wallpaper/monitor_wallpaper.nix";
-    #     Restart = "on-failure";
-    #   };
-    #   Install = {
-    #     WantedBy = [ "graphical-session.target" ];
-    #   };
-    # };
-    #
     services.hyprpaper = {
         enable = true;
         settings = {
