@@ -7,7 +7,7 @@
         installVimSyntax = true;
         # theme = "nord";
         settings = {
-            background-opacity = 0.625;
+            background-opacity = 0.8;
             background = "#242933";
             gtk-titlebar = false;
             resize-overlay = "never";

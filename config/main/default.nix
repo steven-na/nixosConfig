@@ -177,6 +177,7 @@
 
         vesktop
         discord
+        obsidian
 
         sndio
         pavucontrol
