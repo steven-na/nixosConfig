@@ -27,7 +27,6 @@
         inputs@{
             nixpkgs,
             home-manager,
-            zen-browser,
             ...
         }:
         let
