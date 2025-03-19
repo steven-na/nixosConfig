@@ -9,7 +9,6 @@
         enable = true;
         interactiveShellInit = ''
             set fish_greeting # Disable greeting
-            clear; fastfetch
         '';
         plugins = [
             # Enable a plugin (here grc for colorized command output) from nixpkgs

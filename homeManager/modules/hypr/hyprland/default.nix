@@ -6,7 +6,7 @@
 let
     pointer = config.home.pointerCursor;
 
-    cursorName = "Nordzy-cursors";
+    # cursorName = "Nordzy-cursors";
 in
 {
     imports = [
@@ -47,11 +47,11 @@ in
 
                 general {
                   layout = dwindle
-                  gaps_in = 4
-                  gaps_out = 10
+                  gaps_in = 2
+                  gaps_out = 5
 
                   # border
-                  border_size = 3
+                  border_size = 2
                   resize_on_border = true
                   col.active_border = rgba(${lib.removePrefix "#" config.colorscheme.colors.base0B}ee) 
                   col.inactive_border = rgba(${lib.removePrefix "#" config.colorscheme.colors.base00}ee)
@@ -60,7 +60,7 @@ in
                 }
 
                 decoration {
-                    rounding = 15
+                    rounding = 8
 
                     blur {
                       enabled = true

@@ -10,5 +10,6 @@
         ./starship
         ./fish
         ./yazi
+        ./tmux
     ];
 }
