@@ -11,6 +11,7 @@ in
 {
     imports = [
         ./binds.nix
+        ./rules.nix
     ];
 
     wayland.windowManager.hyprland = {
@@ -21,6 +22,8 @@ in
                 "hyprpaper"
                 "waybar"
                 "notify-send Welcome!"
+                "vesktop"
+                "obsidian"
             ];
             env = [
                 "GTK_THEME,Nordic"

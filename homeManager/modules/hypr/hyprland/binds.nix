@@ -1,4 +1,4 @@
-{ config, lib, ... }:
+{ ... }:
 {
     wayland.windowManager.hyprland.extraConfig = # hyprlang
         ''
@@ -15,6 +15,7 @@
             # Exec Binds
             bind = $mainMod, Q, exec, ghostty # terminal
             bind = $mainMod, R, exec, rofi -show drun # application starter
+            bind = $mainMod SHIFT, F, exec, zen
             # Screen shot area
             bind = $mainMod SHIFT, P, exec, grimblast --notify --cursor --freeze --wait 2 --scale 1 copy area
 
@@ -32,6 +33,14 @@
             # Move/resize windows with mainMod + LMB/RMB and dragging
             bindm = $mainMod, mouse:272, movewindow
             bindm = $mainMod, mouse:273, resizewindow
+
+            # Switch Special workspaces
+            bind = $mainMod, S, togglespecialworkspace, magic
+            bind = $mainMod SHIFT, S, movetoworkspace, special:magic
+
+            bind = SUPER, D, exec, pgrep electron && hyprctl dispatch togglespecialworkspace vesktop || electron &
+            bind = SUPER, P, exec, hyprctl dispatch togglespecialworkspace spotify
+            bind = SUPER, O, exec, hyprctl dispatch togglespecialworkspace obsidian
 
             # Switch workspaces with mainMod + [0-9]
             bind = $mainMod, 1, workspace, 1
