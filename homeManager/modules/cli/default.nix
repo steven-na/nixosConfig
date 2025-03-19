@@ -9,5 +9,6 @@
         ./fastfetch
         ./starship
         ./fish
+        ./yazi
     ];
 }
