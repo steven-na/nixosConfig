@@ -7,7 +7,7 @@
             bind = $mainMod, C, killactive, # close window
             bind = $mainMod, J, togglesplit, # dwindle
             bind = $mainMod, V, togglefloating,
-            bind = $mainMod, P, pseudo, # dwindle
+            # bind = $mainMod, P, pseudo, # dwindle
             bind = $mainMod, F, fullscreen, 1
             bind = $mainMod CTRL, F, fullscreen, 0
 

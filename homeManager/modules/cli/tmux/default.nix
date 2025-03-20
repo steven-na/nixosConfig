@@ -1,5 +1,6 @@
 {
     pkgs,
+    inputs,
     ...
 }:
 {
@@ -11,20 +12,18 @@
         plugins = with pkgs.tmuxPlugins; [
             nord
             tmux-fzf
-            yank
-            weather
             vim-tmux-navigator
-            
+            {
+                plugin = inputs.tmux-sessionx.packages."x86_64-linux".default;
+            }
         ];
-        extraConfig = #bash
-        ''
-            unbind C-b
-            set-option -g prefix M-s
+        extraConfig = # bash
+            ''
+                unbind C-b
+                set-option -g prefix M-s
 
-            # bind-key h select-pane -L
-            # bind-key j select-pane -D
-            # bind-key k select-pane -U
-            # bind-key l select-pane -R
-        '';
+                unbind o
+                set -g @sessionx-bind 'o'
+            '';
     };
 }

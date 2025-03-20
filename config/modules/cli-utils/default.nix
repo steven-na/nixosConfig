@@ -20,6 +20,8 @@
         gowall
         inotify-tools
         starship
+        zoxide
+        bat
         grc
         just
         nix-prefetch-git
