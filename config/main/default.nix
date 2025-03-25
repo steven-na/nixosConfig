@@ -18,6 +18,8 @@
         ../modules/cli-utils
         ../modules/hypr
         ../modules/programming-langs
+
+        ../modules/steam
     ];
 
     # Bootloader.
