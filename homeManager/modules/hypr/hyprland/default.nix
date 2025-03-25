@@ -24,6 +24,7 @@ in
                 "notify-send Welcome!"
                 "vesktop"
                 "obsidian"
+                "spotify"
             ];
             env = [
                 "GTK_THEME,Nordic"

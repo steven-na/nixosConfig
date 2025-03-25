@@ -13,12 +13,20 @@
             nord
             tmux-fzf
             vim-tmux-navigator
+            yank
+            resurrect
             {
-                plugin = inputs.tmux-sessionx.packages."x86_64-linux".default;
+                plugin = inputs.tmux-sessionx.packages.${pkgs.system}.default;
+                extraConfig = '''';
             }
         ];
         extraConfig = # bash
             ''
+                set-option -sa terminal-overrides ",xterm*:Tc"
+
+                bind -n M-H previous-window
+                bind -n M-L next-window
+
                 unbind C-b
                 set-option -g prefix M-s
 
