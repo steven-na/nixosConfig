@@ -13,5 +13,8 @@
             # Bind P = Spotify special
             windowrulev2 = tile,class:(spotify)
             windowrulev2 = workspace special:spotify silent,class:(spotify)
+
+            # Force floating window
+            windowrulev2 = float, class:steam, initialTitle:Friends List
         '';
 }

@@ -1,7 +1,4 @@
 {
-    config,
-    inputs,
-    pkgs,
     ...
 }:
 {
@@ -31,7 +28,7 @@
                         "battery"
                     ];
                     modules-center = [
-                        # "hyprland/workspaces"
+                        "hyprland/workspaces" "custom/separator"
                         # "custom/weather" "custom/separator"
                         "clock#time"
                         "clock#date"
@@ -43,8 +40,8 @@
                         "bluetooth"
                         "network"
                         "custom/separator"
-                        "tray"
                         "custom/notification"
+                        "tray"
                     ];
 
                     "custom/separator" = {
@@ -54,7 +51,7 @@
                     };
 
                     "pulseaudio" = {
-                        format = "{icon}   {volume}%";
+                        format = "{icon}  {volume}%";
                         format-bluetooth = "{volume}% {icon}";
                         format-muted = "";
                         format-icons = {
@@ -96,6 +93,15 @@
                     };
                     "hyprland/workspaces" = {
                         all-outputs = true;
+                        format = "{icon}";
+                        format-icons = {
+                            active = "";
+                            default = "";
+                            empty = "";
+                        };
+                        persistent-workspaces = {
+                            "*" = [ 1 2 3 4 5 ];
+                        };
                     };
 
                     "custom/notification" = {
@@ -152,7 +158,7 @@
                     };
                 };
             };
-            style = # c
+            style = # css
                 ''
                     @define-color nord0 #2E3440;
                     @define-color nord1 #3B4252;
@@ -174,6 +180,9 @@
                     @define-color bg alpha(@nord0,.825);
                     @define-color text @nord5;
                     @define-color text-dark @nord4;
+                    @define-color modleft @nord7;
+                    @define-color modcent @nord9;
+                    @define-color modrght @nord10;
 
                     * {
                         font-size:13px;
@@ -188,21 +197,30 @@
                     }
                     .modules-left {
                         padding:2px;
-                        border-radius: 0 0 10 10;
-                        margin:0 6 1 6;
+                        border-radius: 10 10 10 10;
+                        margin:3 6 0 6;
                         background:@bg;
+                        border-style: solid;
+                        border-width: 2px;
+                        border-color: @nord7
                     }
                     .modules-center {
                         padding:2px;
-                        border-radius: 0 0 10 10;
-                        margin:0 6 1 6;
+                        border-radius: 10 10 10 10;
+                        margin:3 6 0 6;
                         background:@bg;
+                        border-style: solid;
+                        border-width: 2px;
+                        border-color: @nord9
                     }
                     .modules-right {
                         padding:2px;
-                        border-radius: 0 0 10 10;
-                        margin:0 6 1 6;
+                        border-radius: 10 10 10 10;
+                        margin:3 6 0 6;
                         background: @bg;
+                        border-style: solid;
+                        border-width: 2px;
+                        border-color: @nord10
                     }
 
                     #custom-separator {
@@ -211,85 +229,83 @@
                     }
 
                     #custom-weather {
-                        color: @text-dark
+                        color: @modcent
                     }
 
                     #custom-waybarmpris, #pulseaudio{
                         padding: 0px 0px;
                         transition: all .3s ease; 
-                        color: @nord7;
+                        color: @modrght;
                     }
 
                     #pulseaudio{
                         padding: 0px 5px;
+                        color:@modrght;
                     }
 
                     #clock:hover, #disk:hover, #custom-waybarmpris:hover, #pulseaudio:hover, #custom-weather:hover, #custom-pacman:hover, #custom-notification:hover,#bluetooth:hover,#network:hover,#battery:hover, #cpu:hover,#memory:hover,#temperature:hover{
                         transition: all .3s ease;
-                        color: @text-dark;
                     }
                     #custom-notification {
                         padding: 0px 5px;
                         transition: all .3s ease;
-                        color:@text;
+                        color:@modrght;
                     }
                     #clock{
                         padding: 0px 5px;
-                        color:@text-dark;
+                        color:@modcent;
                         transition: all .3s ease;
                     }
                     #workspaces {
-                        padding: 0px 5px;
+                        padding: 0px 2px;
                     }
                     #workspaces button {
                         all:unset;
                         padding: 0px 5px;
-                        color: alpha(@text,.4);
+                        color: alpha(@nord9,.5);
                         transition: all .2s ease;
                     }
                     #workspaces button:hover {
-                        color:@nord7;
+                        color:@nord9;
                         border: none;
-                        text-shadow: 0px 0px 1.5px rgba(0, 0, 0, .5);
                         transition: all 1s ease;
                     }
                     #workspaces button.active {
-                        color: @nord6;
+                        color: @nord10;
                         border: none;
                         text-shadow: 0px 0px 2px rgba(0, 0, 0, .5);
                     }
                     #workspaces button.empty {
-                        color: rgba(0,0,0,0);
+                        color: alpha(@nord1,.5);
                         border: none;
                         text-shadow: 0px 0px 1.5px rgba(0, 0, 0, .2);
                     }
                     #workspaces button.empty:hover {
-                        color: rgba(0,0,0,0);
+                        color: alpha(@nord1,.75);
                         border: none;
                         text-shadow: 0px 0px 1.5px rgba(0, 0, 0, .5);
                         transition: all 1s ease;
                     }
                     #workspaces button.empty.active {
-                        color: @nord4;
+                        color: @nord1;
                         border: none;
                         text-shadow: 0px 0px 2px rgba(0, 0, 0, .5);
                     }
                     #bluetooth{
                         padding: 0px 5px;
                         transition: all .3s ease;
-                        color:@nord9;
-
+                        color:@modrght;
                     }
                     #network{
                         padding: 0px 5px;
                         transition: all .3s ease;
-                        color:@nord9;
+                        color:@modrght;
                     }
 
                     #battery{
                         padding: 0px 5px;
                         transition: all .3s ease;
-                        color:@text;
+                        color:@modleft;
                     }
 
                     #battery.charging {
@@ -331,19 +347,19 @@
                     }
 
                     #disk{
-                        color:@nord10;
+                        color:@modleft;
                     }
 
                     #memory{
-                        color:@nord9;
+                        color:@modleft;
                     }
 
                     #cpu{
-                        color:@nord8;
+                        color:@modleft;
                     }
 
                     #temperature{
-                        color:@nord7;
+                        color:@modleft;
                     }
 
                     #temperature.critical{

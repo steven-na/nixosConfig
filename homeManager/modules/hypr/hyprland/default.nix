@@ -57,8 +57,8 @@ in
                   # border
                   border_size = 2
                   resize_on_border = true
-                  col.active_border = rgba(${lib.removePrefix "#" config.colorscheme.colors.base0B}ee) 
-                  col.inactive_border = rgba(${lib.removePrefix "#" config.colorscheme.colors.base00}ee)
+                  col.active_border = rgba(${lib.removePrefix "#" config.colorscheme.colors.base0D}ee) 
+                  col.inactive_border = rgba(${lib.removePrefix "#" config.colorscheme.colors.base00}00)
 
                   allow_tearing = false
                 }
